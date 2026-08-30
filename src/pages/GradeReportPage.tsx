@@ -169,7 +169,7 @@ export default function GradeReportPage() {
         <div className="bg-white border border-slate-300 shadow-none">
           <div className="bg-[#2d3748] text-white px-3 py-1.5 text-xs font-bold flex items-center justify-between">
             <span>Course Results Table / جدول درجات المقررات الدراسية</span>
-            <span className="text-[11px] text-slate-300 font-normal">7 Distinct Courses / 7 مقررات</span>
+            <span className="text-[11px] text-slate-300 font-normal">{gradeReportRows.length} Distinct Courses / {gradeReportRows.length} مقررات</span>
           </div>
 
           <div className="overflow-x-auto">

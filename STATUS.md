@@ -26,24 +26,20 @@ A responsive web portal for the Egyptian Russian University (ERU) student self-s
 
 The default route (`/`) redirects to `/login`.
 
-## Academic Records & Courses (7 Distinct Courses)
+## Academic Records & Courses (3 Distinct Courses)
 
 All academic metrics (Credits, Quality Points, Term GPA, and CGPA) are dynamically calculated from the single source of truth:
 
-- `MD202` — Anatomy & Histology — 3.00 CH — C (Active, Pass) — Points: 6.00
-- `PC102` — Pharmaceutical Organic Chemistry I — 3.00 CH — B (Active, Pass) — Points: 8.70
+- `PC202` — Pharmaceutical Organic Chemistry II — 3.00 CH — B (Active, Pass) — Points: 8.70
+- `PC201` — Pharmaceutical Analytical Chemistry II — 1.00 CH — B (Active, Pass) — Points: 2.90
 - `PT202` — Physical Pharmacy — 2.00 CH — C (Active, Pass) — Points: 4.00
-- `MD203` — Psychology — 4.00 CH — D (Active, Pass) — Points: 4.80
-- `PB201` — Cell Biology — 4.00 CH — D+ (Active, Pass) — Points: 5.60
-- `PC101` — Pharmaceutical Analytical Chemistry I — 1.00 CH — B (Active, Pass) — Points: 2.90
-- `PG101` — Medicinal Plants — 3.00 CH — C (Active, Pass) — Points: 6.00
 
 ### Academic Totals:
-- **Total Attempted Credits:** 20.00
-- **Total Passed Credits:** 20.00
-- **Total Quality Points:** 38.00
-- **Calculated Term GPA:** 1.90
-- **Calculated CGPA:** 1.90
+- **Total Attempted Credits:** 6.00
+- **Total Passed Credits:** 6.00
+- **Total Quality Points:** 15.60
+- **Calculated Term GPA:** 2.60
+- **Calculated CGPA:** 2.60
 
 ## Current Status
 
