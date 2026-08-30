@@ -30,16 +30,16 @@ The default route (`/`) redirects to `/login`.
 
 All academic metrics (Credits, Quality Points, Term GPA, and CGPA) are dynamically calculated from the single source of truth:
 
-- `PC202` — Pharmaceutical Organic Chemistry II — 3.00 CH — B (Active, Pass) — Points: 8.70
-- `PC201` — Pharmaceutical Analytical Chemistry II — 1.00 CH — B (Active, Pass) — Points: 2.90
+- `PC202` — Pharmaceutical Organic Chemistry II — 3.00 CH — C (Active, Pass) — Points: 6.00
+- `PC201` — Pharmaceutical Analytical Chemistry II — 1.00 CH — D+ (Active, Pass) — Points: 1.40
 - `PT202` — Physical Pharmacy — 2.00 CH — C (Active, Pass) — Points: 4.00
 
 ### Academic Totals:
 - **Total Attempted Credits:** 6.00
 - **Total Passed Credits:** 6.00
-- **Total Quality Points:** 15.60
-- **Calculated Term GPA:** 2.60
-- **Calculated CGPA:** 2.60
+- **Total Quality Points:** 11.40
+- **Calculated Term GPA:** 1.90
+- **Calculated CGPA:** 1.90
 
 ## Current Status
 
