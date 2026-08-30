@@ -51,10 +51,13 @@ All academic metrics (Credits, Quality Points, Term GPA, and CGPA) are dynamical
 - Traditional ERU / UMIS university portal visual styling applied across all pages.
 - Header with top student data bar and dark gray navigation strip with ERU green accent.
 - Visible "Unofficial Academic Record" indicators on all academic pages.
+- Verified all responsive breakpoints (375px, 430px, 768px, 1366px, 1920px).
+- Production deployment live on Vercel (`https://egyptian-russian-university.vercel.app`).
 - TypeScript compilation (`tsc`) and Vite production build pass cleanly.
 - ESLint passes with 0 warnings and 0 errors.
 
 ---
 
-Last updated: 2026-08-30
+Last updated: 2026-08-30 (Commit: 7f4f35f)
+
 
