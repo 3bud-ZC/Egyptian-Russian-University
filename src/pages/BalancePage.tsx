@@ -13,50 +13,50 @@ const radioOptions = [
 ]
 
 export default function BalancePage() {
-  const [period, setPeriod] = useState('2025/SPRING')
+  const [period, setPeriod] = useState('2025/2026 - Spring')
   const [view, setView] = useState('balance')
 
   return (
     <AppShell>
-      <div className="space-y-6">
-        <PageHeader title="Balance / الرصيد" />
+      <div className="space-y-4 max-w-6xl mx-auto">
+        <PageHeader title="Balance / الرصيد والمصروفات" />
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
           <Card className="lg:col-span-2">
-            <h2 className="text-lg font-semibold text-black mb-2">Balance Due By Term / الرصيد المستحق</h2>
-            <p className="text-sm text-slate-600 mb-4">
-              Summary of charges, credits, and remaining balance for the selected period.
+            <h2 className="text-sm sm:text-base font-bold text-slate-900 mb-2">Balance Due By Term / الرصيد المستحق للفصل الدراسي</h2>
+            <p className="text-xs text-slate-600 mb-4">
+              Summary of tuition fees, discounts, and payments for {period}.
             </p>
 
-            <div className="bg-slate-100 border border-black p-4 flex items-center justify-between mb-4">
-              <span className="text-sm font-semibold text-black">Total Balance / الرصيد الإجمالي</span>
-              <span className="text-2xl font-bold text-black">
-                {balanceSummary.total.toFixed(2)} ج.م
+            <div className="bg-[#f8fafc] border border-slate-300 p-3 sm:p-4 flex items-center justify-between mb-4">
+              <span className="text-xs sm:text-sm font-bold text-slate-900">Total Outstanding Balance / الرصيد المتبقي</span>
+              <span className="text-xl sm:text-2xl font-extrabold text-slate-950">
+                {balanceSummary.total.toFixed(2)} EGP / ج.م
               </span>
             </div>
 
-            <div className="overflow-x-auto">
-              <table className="w-full text-sm border border-black">
+            <div className="overflow-x-auto border border-slate-300">
+              <table className="w-full text-xs sm:text-sm">
                 <tbody>
-                  <tr className="border-b border-black">
-                    <td className="py-2 px-3 border-r border-black">Tuition / الرسوم الدراسية</td>
-                    <td className="py-2 px-3 text-right">{balanceSummary.tuition.toFixed(2)} ج.م</td>
+                  <tr className="border-b border-slate-300 bg-white">
+                    <td className="py-2.5 px-3 border-r border-slate-300 font-medium text-slate-800">Tuition / الرسوم الدراسية الأساسية</td>
+                    <td className="py-2.5 px-3 text-right font-bold text-slate-900">{balanceSummary.tuition.toFixed(2)} ج.م</td>
                   </tr>
-                  <tr className="border-b border-black">
-                    <td className="py-2 px-3 border-r border-black">Extra Repeat / إعادة إضافية</td>
-                    <td className="py-2 px-3 text-right">{balanceSummary.extraRepeat.toFixed(2)} ج.م</td>
+                  <tr className="border-b border-slate-300 bg-slate-50">
+                    <td className="py-2.5 px-3 border-r border-slate-300 font-medium text-slate-800">Extra Repeat / إعادة مقررات</td>
+                    <td className="py-2.5 px-3 text-right font-bold text-slate-900">{balanceSummary.extraRepeat.toFixed(2)} ج.م</td>
                   </tr>
-                  <tr className="border-b border-black">
-                    <td className="py-2 px-3 border-r border-black">Discount / الخصم</td>
-                    <td className="py-2 px-3 text-right">−{balanceSummary.discount.toFixed(2)} ج.م</td>
+                  <tr className="border-b border-slate-300 bg-white">
+                    <td className="py-2.5 px-3 border-r border-slate-300 font-medium text-emerald-800">Scholarship & Discount / المنحة والخصم</td>
+                    <td className="py-2.5 px-3 text-right font-bold text-emerald-800">−{balanceSummary.discount.toFixed(2)} ج.م</td>
                   </tr>
-                  <tr className="border-b border-black">
-                    <td className="py-2 px-3 border-r border-black">Payment / الدفع</td>
-                    <td className="py-2 px-3 text-right">−{balanceSummary.payment.toFixed(2)} ج.م</td>
+                  <tr className="border-b border-slate-300 bg-slate-50">
+                    <td className="py-2.5 px-3 border-r border-slate-300 font-medium text-blue-800">Paid Amounts / المسدد</td>
+                    <td className="py-2.5 px-3 text-right font-bold text-blue-800">−{balanceSummary.payment.toFixed(2)} ج.م</td>
                   </tr>
-                  <tr>
-                    <td className="py-2 px-3 border-r border-black">Activities / الأنشطة</td>
-                    <td className="py-2 px-3 text-right">{balanceSummary.activities.toFixed(2)} ج.م</td>
+                  <tr className="bg-white">
+                    <td className="py-2.5 px-3 border-r border-slate-300 font-medium text-slate-800">Student Activities / الأنشطة الطلابية</td>
+                    <td className="py-2.5 px-3 text-right font-bold text-slate-900">{balanceSummary.activities.toFixed(2)} ج.م</td>
                   </tr>
                 </tbody>
               </table>
@@ -64,21 +64,21 @@ export default function BalancePage() {
           </Card>
 
           <Card>
-            <h2 className="text-lg font-semibold text-black mb-4">Options / الخيارات</h2>
+            <h2 className="text-sm sm:text-base font-bold text-slate-900 mb-3">Filter Options / خيارات العرض</h2>
             <div className="mb-4">
-              <label className="block text-sm font-medium text-slate-600 mb-1">Period / الفصل</label>
+              <label className="block text-xs font-semibold text-slate-700 mb-1">Period / الفصل الدراسي</label>
               <SelectBox value={period} options={periodOptions} onChange={setPeriod} className="w-full" />
             </div>
-            <div className="space-y-3">
+            <div className="space-y-2 text-xs">
               {radioOptions.map((opt) => (
-                <label key={opt.value} className="flex items-start gap-2 text-sm text-slate-700 cursor-pointer">
+                <label key={opt.value} className="flex items-center gap-2 text-slate-800 cursor-pointer p-2 border border-slate-200 hover:bg-slate-50">
                   <input
                     type="radio"
                     name="balance-view"
                     value={opt.value}
                     checked={view === opt.value}
                     onChange={() => setView(opt.value)}
-                    className="mt-1"
+                    className="accent-[#1b7e42]"
                   />
                   {opt.label}
                 </label>
@@ -86,7 +86,6 @@ export default function BalancePage() {
             </div>
           </Card>
         </div>
-
       </div>
     </AppShell>
   )

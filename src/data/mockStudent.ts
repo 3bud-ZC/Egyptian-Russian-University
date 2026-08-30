@@ -1,27 +1,50 @@
+import { gradeReportRows, calculateTotals } from './mockGrades'
+
 export const mockStudent = {
   name: 'Tasnem',
   fullName: 'Tasnem Mohamed Rafat Ahmed Mohamed',
+  fullNameAr: 'تسنيم محمد رفعت احمد محمد',
   email: '256323@eru.edu.eg',
   university: 'Egyptian Russian University',
   universityAr: 'الجامعة المصرية الروسية',
-  faculty: 'Clinical Pharmacy',
+  faculty: 'Faculty of Clinical Pharmacy',
   facultyAr: 'كلية الصيدلة الإكلينيكية',
   program: 'Clinical Pharmacy',
-  degree: 'Bachelor of Pharmacy',
-  curriculum: 'Bachelor of Pharmacy',
+  programAr: 'صيدلة إكلينيكية',
+  degree: 'Bachelor of Pharmacy (Pharm D)',
+  degreeAr: 'بكالوريوس الصيدلة الإكلينيكية',
+  curriculum: 'Pharm D - Clinical Pharmacy',
   year: 'Year One',
+  yearAr: 'المستوى الأول',
   studentId: '256323',
-  period: '2025/SPRING',
+  nationalId: '30501010102588',
+  period: '2025/2026 - Spring',
   academicYear: '2025/2026',
-  advisor: 'Ahmed Abdelsamea',
+  semester: 'Spring',
+  semesterAr: 'الربيعي',
+  advisor: 'Dr. Ahmed Abdelsamea',
+  advisorAr: 'د. أحمد عبد السميع',
   gpa: {
-    term: 1.67,
-    overall: 1.67,
+    get term() {
+      return calculateTotals(gradeReportRows).gpa
+    },
+    get overall() {
+      return calculateTotals(gradeReportRows).gpa
+    },
   },
-  passedCredits: 18.0,
+  get passedCredits() {
+    return calculateTotals(gradeReportRows).totalPassed
+  },
+  get attemptedCredits() {
+    return calculateTotals(gradeReportRows).totalAttempted
+  },
+  get qualityPoints() {
+    return calculateTotals(gradeReportRows).totalQualityPoints
+  },
   degreeAwarded: 'Not yet granted',
   dateGranted: 'Not yet granted',
   address: 'Cairo, Arab Republic of Egypt',
 }
 
 export type Student = typeof mockStudent
+

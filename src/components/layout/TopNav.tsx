@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
-import { Menu, ShoppingCart, User, ChevronDown, X } from 'lucide-react'
+import { Menu, ChevronDown, X, ShieldAlert, LogOut } from 'lucide-react'
 import { FullMenuOverlay } from './FullMenuOverlay'
 import { GradesDropdown } from './GradesDropdown'
 import { mockStudent } from '@/data/mockStudent'
@@ -12,10 +12,11 @@ interface TopNavProps {
 }
 
 const navItems = [
-  { label: 'Registration', to: '/registration/schedule', hasDropdown: false },
-  { label: 'Grades', to: '/grades/report', hasDropdown: true },
-  { label: 'Finances', to: '/finances/balance', hasDropdown: false },
-  { label: 'Search', to: '#', hasDropdown: false },
+  { label: 'Today\'s Overview', labelAr: 'الرئيسية', to: '/dashboard', hasDropdown: false },
+  { label: 'Registration', labelAr: 'التسجيل', to: '/registration/schedule', hasDropdown: false },
+  { label: 'Grade Report', labelAr: 'النتائج', to: '/grades/report', hasDropdown: true },
+  { label: 'Unofficial Transcript', labelAr: 'السجل الأكاديمي', to: '/grades/transcript', hasDropdown: false },
+  { label: 'Finances', labelAr: 'الرسوم والمصروفات', to: '/finances/balance', hasDropdown: false },
 ]
 
 export function TopNav({ variant = 'portal', pageLabel }: TopNavProps) {
@@ -28,81 +29,120 @@ export function TopNav({ variant = 'portal', pageLabel }: TopNavProps) {
 
   return (
     <>
-      <header className="h-14 sm:h-16 bg-white text-slate-800 flex items-center justify-between px-3 sm:px-4 lg:px-6 shadow-sm border-b border-slate-200 relative z-40">
-        <div className="flex items-center gap-3">
-          <Link to={isLogin ? '/login' : '/dashboard'} className="flex items-center gap-3">
-            <img
-              src="/eru-logo.png"
-              alt="Egyptian Russian University"
-              className="h-10 w-auto object-contain"
-            />
-          </Link>
-        </div>
+      <header className="bg-white border-b border-slate-300 relative z-40">
+        {/* Top University Identity & Student Info Row */}
+        <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8 py-2.5 flex items-center justify-between gap-4">
+          <div className="flex items-center gap-3">
+            <Link to={isLogin ? '/login' : '/dashboard'} className="flex items-center gap-2 sm:gap-3">
+              <img
+                src="/eru-logo.png"
+                alt="Egyptian Russian University"
+                className="h-9 sm:h-11 w-auto object-contain"
+              />
+            </Link>
+          </div>
 
-        <div className="flex-1 flex items-center justify-center">
-          {!isLogin && (
-            <nav className="hidden lg:flex items-center gap-1">
-              {navItems.map((item) => {
-                const isActive =
-                  item.to !== '#' && location.pathname.startsWith(item.to.replace(/#.*/, ''))
-                return (
-                  <div key={item.label} className="relative group">
-                    {item.hasDropdown ? (
-                      <button
-                        onClick={() => setGradesOpen((v) => !v)}
-                        className={cn(
-                          'flex items-center px-4 py-5 text-sm font-semibold hover:bg-slate-50 transition border-b-4 border-transparent text-slate-600',
-                          gradesOpen ? 'bg-slate-50 border-eru-600 text-eru-700' : isActive && 'border-eru-600 text-eru-700'
-                        )}
-                      >
-                        {item.label}
-                        <ChevronDown className="w-4 h-4 ml-1" />
-                      </button>
-                    ) : (
-                      <Link
-                        to={item.to}
-                        className={cn(
-                          'block px-4 py-5 text-sm font-semibold hover:bg-slate-50 transition border-b-4 border-transparent text-slate-600',
-                          isActive && 'border-eru-600 text-eru-700'
-                        )}
-                      >
-                        {item.label}
-                      </Link>
-                    )}
-                  </div>
-                )
-              })}
-            </nav>
-          )}
-          {pageLabel && (
-            <div className="text-sm font-semibold tracking-widest text-slate-600 lg:hidden">
-              {pageLabel}
+          {!isLogin ? (
+            <div className="flex items-center gap-4 text-right">
+              <div className="hidden sm:block">
+                <div className="text-xs sm:text-sm font-bold text-slate-900 leading-tight">
+                  Welcome, <span className="text-slate-800">{mockStudent.fullName}</span>
+                </div>
+                <div className="text-[11px] text-slate-600 mt-0.5 flex items-center justify-end gap-1.5 flex-wrap">
+                  <span className="bg-slate-100 text-slate-700 px-1.5 py-0.5 rounded font-medium">Student View</span>
+                  <span>|</span>
+                  <span className="font-medium text-emerald-800">{mockStudent.faculty}</span>
+                  <span>|</span>
+                  <span className="text-slate-500">{mockStudent.academicYear} ({mockStudent.semester})</span>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-1 sm:gap-2">
+                <Link
+                  to="/login"
+                  title="Sign out / تسجيل خروج"
+                  className="hidden md:flex items-center gap-1 text-[11px] text-slate-600 hover:text-red-700 px-2 py-1 border border-slate-200 rounded hover:bg-slate-50 transition"
+                >
+                  <LogOut className="w-3.5 h-3.5" />
+                  <span>Sign out</span>
+                </Link>
+
+                <button
+                  onClick={() => setMenuOpen((v) => !v)}
+                  className="p-1.5 hover:bg-slate-100 rounded border border-slate-300 transition text-slate-700 lg:hidden"
+                  aria-label="Menu"
+                >
+                  {menuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+                </button>
+              </div>
             </div>
+          ) : (
+            pageLabel && (
+              <div className="text-xs sm:text-sm font-semibold tracking-wider text-slate-600">
+                {pageLabel}
+              </div>
+            )
           )}
         </div>
 
-        <div className="flex items-center gap-2 sm:gap-3">
-          {!isLogin && (
-            <>
-              <button className="hidden sm:flex p-2 hover:bg-slate-100 rounded-full transition text-slate-600">
-                <ShoppingCart className="w-5 h-5" />
-              </button>
-              <button className="hidden sm:flex p-2 hover:bg-slate-100 rounded-full transition text-slate-600">
-                <User className="w-5 h-5" />
-              </button>
-              <span className="hidden md:inline text-sm font-medium bg-slate-100 text-slate-700 px-3 py-1 rounded-full">
-                {mockStudent.name}
-              </span>
-            </>
-          )}
-          <button
-            onClick={() => setMenuOpen((v) => !v)}
-            className="p-2 hover:bg-slate-100 rounded-full transition text-slate-700"
-            aria-label="Menu"
-          >
-            {menuOpen ? <X className="w-5 h-5 sm:w-6 sm:h-6" /> : <Menu className="w-5 h-5 sm:w-6 sm:h-6" />}
-          </button>
-        </div>
+        {/* Bottom Dark Gray Navigation Strip with ERU Green Accent */}
+        {!isLogin && (
+          <div className="bg-[#2d3748] text-white border-t border-[#1a202c]">
+            <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8 flex items-center justify-between">
+              <nav className="hidden lg:flex items-center">
+                {navItems.map((item) => {
+                  const isActive =
+                    item.to !== '#' && location.pathname === item.to || (item.to !== '/dashboard' && location.pathname.startsWith(item.to))
+                  return (
+                    <div key={item.label} className="relative">
+                      {item.hasDropdown ? (
+                        <button
+                          onClick={() => setGradesOpen((v) => !v)}
+                          className={cn(
+                            'flex items-center gap-1 px-3.5 py-2 text-xs font-semibold tracking-wide transition border-b-2 border-transparent text-slate-200 hover:text-white hover:bg-[#374151]',
+                            gradesOpen || isActive
+                              ? 'bg-[#1b7e42] text-white border-emerald-400 font-bold'
+                              : ''
+                          )}
+                        >
+                          <span>{item.label}</span>
+                          <span className="text-[10px] text-slate-300">/ {item.labelAr}</span>
+                          <ChevronDown className="w-3.5 h-3.5 ml-0.5 opacity-80" />
+                        </button>
+                      ) : (
+                        <Link
+                          to={item.to}
+                          className={cn(
+                            'flex items-center gap-1 px-3.5 py-2 text-xs font-semibold tracking-wide transition border-b-2 border-transparent text-slate-200 hover:text-white hover:bg-[#374151]',
+                            isActive
+                              ? 'bg-[#1b7e42] text-white border-emerald-400 font-bold'
+                              : ''
+                          )}
+                        >
+                          <span>{item.label}</span>
+                          <span className="text-[10px] text-slate-300">/ {item.labelAr}</span>
+                        </Link>
+                      )}
+                    </div>
+                  )
+                })}
+              </nav>
+
+              {/* Unofficial Record Persistent Indicator Badge */}
+              <div className="flex items-center justify-between w-full lg:w-auto py-1.5 text-[11px]">
+                <div className="flex items-center gap-1.5 text-amber-300 bg-black/30 px-2.5 py-0.5 rounded border border-amber-500/30">
+                  <ShieldAlert className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+                  <span className="font-semibold tracking-wide">Unofficial Academic Record</span>
+                  <span className="text-[10px] text-amber-200/80 hidden sm:inline">| سجل غير رسمي</span>
+                </div>
+
+                <div className="flex items-center gap-2 lg:hidden">
+                  <span className="text-[11px] text-slate-300 font-medium">{mockStudent.name} ({mockStudent.studentId})</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
       </header>
 
       {gradesOpen && !menuOpen && (
@@ -119,3 +159,4 @@ export function TopNav({ variant = 'portal', pageLabel }: TopNavProps) {
     </>
   )
 }
+

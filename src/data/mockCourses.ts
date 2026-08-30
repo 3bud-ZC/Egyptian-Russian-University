@@ -24,13 +24,35 @@ export const mockCourses: Course[] = [
   {
     code: 'MD202',
     title: 'Anatomy & Histology',
-    credits: 2,
+    credits: 3,
     days: ['Sunday', 'Tuesday'],
     startTime: '9:00 AM',
     endTime: '10:30 AM',
     location: 'Pharmacy Building - Hall 1',
     instructor: 'Dr. Tarek Mostafa',
     color: palette[0],
+  },
+  {
+    code: 'PC102',
+    title: 'Pharmaceutical Organic Chemistry I',
+    credits: 3,
+    days: ['Wednesday', 'Saturday'],
+    startTime: '9:00 AM',
+    endTime: '10:30 AM',
+    location: 'Pharmacy Building - Hall 3',
+    instructor: 'Dr. Rania Sobhy',
+    color: palette[4],
+  },
+  {
+    code: 'PT202',
+    title: 'Physical Pharmacy',
+    credits: 2,
+    days: ['Tuesday', 'Thursday'],
+    startTime: '12:00 PM',
+    endTime: '1:30 PM',
+    location: 'Pharmacy Building - Lab 5',
+    instructor: 'Dr. Mona Galal',
+    color: palette[6],
   },
   {
     code: 'MD203',
@@ -66,17 +88,6 @@ export const mockCourses: Course[] = [
     color: palette[3],
   },
   {
-    code: 'PC102',
-    title: 'Pharmaceutical Organic Chemistry I',
-    credits: 2,
-    days: ['Wednesday', 'Saturday'],
-    startTime: '9:00 AM',
-    endTime: '10:30 AM',
-    location: 'Pharmacy Building - Hall 3',
-    instructor: 'Dr. Rania Sobhy',
-    color: palette[4],
-  },
-  {
     code: 'PG101',
     title: 'Medicinal Plants',
     credits: 3,
@@ -87,17 +98,6 @@ export const mockCourses: Course[] = [
     instructor: 'Dr. Khaled Hassan',
     color: palette[5],
   },
-  {
-    code: 'PT202',
-    title: 'Physical Pharmacy',
-    credits: 2,
-    days: ['Tuesday', 'Thursday'],
-    startTime: '12:00 PM',
-    endTime: '1:30 PM',
-    location: 'Pharmacy Building - Lab 5',
-    instructor: 'Dr. Mona Galal',
-    color: palette[6],
-  },
 ]
 
-export const periodOptions = ['2025/SPRING', '2024/FALL', '2024/SPRING', '2023/FALL']
+export const periodOptions = ['2025/2026 - Spring', '2025/2026 - Fall', '2024/2025 - Spring', '2024/2025 - Fall']
