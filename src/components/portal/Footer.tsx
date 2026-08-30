@@ -12,7 +12,7 @@ export function Footer() {
           <p className="font-semibold text-slate-700">
             {mockStudent.fullName} <span className="mx-1">|</span> {mockStudent.studentId}
           </p>
-          <p className="text-amber-800 mt-0.5">Unofficial Student Academic View | للاطلاع الأكاديمي غير الرسمي</p>
+          <p className="text-emerald-800 font-medium mt-0.5">Official Student Academic Portal | البوابة الأكاديمية الرسمية</p>
         </div>
       </div>
     </footer>

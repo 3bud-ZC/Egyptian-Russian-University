@@ -6,7 +6,7 @@ interface GradesDropdownProps {
 }
 
 const gradeItems = [
-  { label: 'Unofficial Transcript', to: '/grades/transcript' },
+  { label: 'Academic Transcript', to: '/grades/transcript' },
   { label: 'Grade Report', to: '/grades/report' },
   { label: 'Request Transcript', to: '/grades/transcript' },
   { label: 'Attendance Report', to: '/grades/report' },

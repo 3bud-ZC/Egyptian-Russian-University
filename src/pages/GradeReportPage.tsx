@@ -3,7 +3,7 @@ import { AppShell } from '@/components/layout/AppShell'
 import { PrintLink } from '@/components/ui/PrintLink'
 import { gradeReportRows, calculateTotals, type GradeRow } from '@/data/mockGrades'
 import { mockStudent } from '@/data/mockStudent'
-import { AlertCircle, FileSpreadsheet } from 'lucide-react'
+import { FileSpreadsheet } from 'lucide-react'
 
 const academicYears = ['2025/2026', '2024/2025', '2023/2024']
 const semesters = ['Spring / الربيعي', 'Fall / الخريفي', 'Summer / الصيفي']
@@ -50,22 +50,6 @@ export default function GradeReportPage() {
   return (
     <AppShell>
       <div className="max-w-6xl mx-auto space-y-4">
-        {/* Unofficial Academic Record Notice */}
-        <div className="bg-amber-50 border-l-4 border-amber-500 border border-amber-200 p-2.5 sm:p-3 text-xs text-amber-900 flex items-start sm:items-center justify-between gap-3 shadow-none">
-          <div className="flex items-start sm:items-center gap-2">
-            <AlertCircle className="w-4 h-4 text-amber-700 shrink-0 mt-0.5 sm:mt-0" />
-            <div className="leading-relaxed">
-              <span className="font-bold">Unofficial Academic Record:</span>{' '}
-              <span>This document is for internal student reference only and is not an official university certificate.</span>{' '}
-              <span className="text-amber-800 font-medium block sm:inline mt-0.5 sm:mt-0">(هذا السجل الأكاديمي للاطلاع الداخلي فقط ولا يعتد به كشهادة رسمية.)</span>
-            </div>
-          </div>
-          <div className="hidden md:block shrink-0">
-            <span className="bg-amber-200/70 text-amber-900 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider">
-              Student Copy
-            </span>
-          </div>
-        </div>
 
         {/* Page Title & Controls Strip */}
         <div className="bg-white border border-slate-300 p-3 sm:p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-none">

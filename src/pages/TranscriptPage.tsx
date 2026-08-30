@@ -7,7 +7,7 @@ export default function TranscriptPage() {
   return (
     <AppShell>
       <div className="space-y-6">
-        <PageHeader title="Unofficial Transcript" action={<PrintLink />} />
+        <PageHeader title="Academic Transcript / السجل الأكاديمي" action={<PrintLink />} />
 
         <TranscriptDocument />
       </div>

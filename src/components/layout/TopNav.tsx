@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
-import { Menu, ChevronDown, X, ShieldAlert, LogOut } from 'lucide-react'
+import { Menu, ChevronDown, X, LogOut } from 'lucide-react'
 import { FullMenuOverlay } from './FullMenuOverlay'
 import { GradesDropdown } from './GradesDropdown'
 import { mockStudent } from '@/data/mockStudent'
@@ -15,7 +15,7 @@ const navItems = [
   { label: 'Today\'s Overview', labelAr: 'الرئيسية', to: '/dashboard', hasDropdown: false },
   { label: 'Registration', labelAr: 'التسجيل', to: '/registration/schedule', hasDropdown: false },
   { label: 'Grade Report', labelAr: 'النتائج', to: '/grades/report', hasDropdown: true },
-  { label: 'Unofficial Transcript', labelAr: 'السجل الأكاديمي', to: '/grades/transcript', hasDropdown: false },
+  { label: 'Academic Transcript', labelAr: 'السجل الأكاديمي', to: '/grades/transcript', hasDropdown: false },
   { label: 'Finances', labelAr: 'الرسوم والمصروفات', to: '/finances/balance', hasDropdown: false },
 ]
 
@@ -49,7 +49,7 @@ export function TopNav({ variant = 'portal', pageLabel }: TopNavProps) {
                   Welcome, <span className="text-slate-800">{mockStudent.fullName}</span>
                 </div>
                 <div className="text-[11px] text-slate-600 mt-0.5 flex items-center justify-end gap-1.5 flex-wrap">
-                  <span className="bg-slate-100 text-slate-700 px-1.5 py-0.5 rounded font-medium">Student View</span>
+                  <span className="bg-slate-100 text-slate-700 px-1.5 py-0.5 rounded font-medium">Student Portal</span>
                   <span>|</span>
                   <span className="font-medium text-emerald-800">{mockStudent.faculty}</span>
                   <span>|</span>
@@ -128,12 +128,12 @@ export function TopNav({ variant = 'portal', pageLabel }: TopNavProps) {
                 })}
               </nav>
 
-              {/* Unofficial Record Persistent Indicator Badge */}
+              {/* Official Academic Status Badge */}
               <div className="flex items-center justify-between w-full lg:w-auto py-1.5 text-[11px] gap-2 overflow-hidden">
-                <div className="flex items-center gap-1.5 text-amber-300 bg-black/30 px-2 py-0.5 border border-amber-500/30 shrink-0">
-                  <ShieldAlert className="w-3.5 h-3.5 text-amber-400 shrink-0" />
-                  <span className="font-semibold tracking-wide text-[10px] sm:text-[11px]">Unofficial Academic Record</span>
-                  <span className="text-[10px] text-amber-200/80 hidden md:inline">| سجل غير رسمي</span>
+                <div className="flex items-center gap-1.5 text-emerald-300 bg-black/20 px-2.5 py-0.5 border border-emerald-500/30 shrink-0">
+                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                  <span className="font-semibold tracking-wide text-[10px] sm:text-[11px]">Academic Status: Active</span>
+                  <span className="text-[10px] text-emerald-200/80 hidden md:inline">| الحالة: مقيد</span>
                 </div>
 
                 <div className="hidden sm:flex items-center gap-2 lg:hidden truncate">

@@ -82,10 +82,6 @@ export default function LoginPage() {
                 Sign In / تسجيل الدخول
               </button>
             </form>
-
-            <div className="mt-6 pt-4 border-t border-slate-200 text-center text-[11px] text-slate-500">
-              <p>Demo Login: <code className="bg-slate-100 px-1 py-0.5 font-bold text-slate-800">256323@eru.edu.eg</code> | Pass: <code className="bg-slate-100 px-1 py-0.5 font-bold text-slate-800">1234</code></p>
-            </div>
           </div>
 
           <div className="mt-4 text-center text-xs text-slate-500">

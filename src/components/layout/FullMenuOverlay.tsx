@@ -19,7 +19,7 @@ const menuGroups = [
   {
     title: 'Grades',
     items: [
-      { label: 'Unofficial Transcript', to: '/grades/transcript' },
+      { label: 'Academic Transcript', to: '/grades/transcript' },
       { label: 'Grade Report', to: '/grades/report' },
       { label: 'Request transcript', to: '/grades/transcript' },
       { label: 'Attendance Report', to: '/grades/report' },

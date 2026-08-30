@@ -1,6 +1,5 @@
 import { transcriptTerms } from '@/data/mockGrades'
 import { mockStudent } from '@/data/mockStudent'
-import { AlertCircle } from 'lucide-react'
 
 export function TranscriptDocument() {
   const overall = transcriptTerms.reduce(
@@ -16,22 +15,10 @@ export function TranscriptDocument() {
 
   return (
     <div className="space-y-4 max-w-4xl mx-auto">
-      {/* Unofficial Banner */}
-      <div className="bg-amber-50 border-l-4 border-amber-500 border border-amber-200 p-2.5 sm:p-3 text-xs text-amber-900 flex items-start sm:items-center justify-between gap-3 shadow-none print:hidden">
-        <div className="flex items-start sm:items-center gap-2">
-          <AlertCircle className="w-4 h-4 text-amber-700 shrink-0 mt-0.5 sm:mt-0" />
-          <div className="leading-relaxed">
-            <span className="font-bold">Unofficial Academic Transcript:</span>{' '}
-            <span>Issued for student reference only. Not an official university certificate.</span>{' '}
-            <span className="text-amber-800 font-medium block sm:inline mt-0.5 sm:mt-0">(هذا السجل الأكاديمي للاطلاع فقط ولا يعتد به كشهادة رسمية.)</span>
-          </div>
-        </div>
-      </div>
-
       <div className="bg-white rounded-none shadow-none border border-slate-400 p-5 sm:p-8 md:p-10 print:shadow-none print:p-0 print:border-0">
         <div className="text-center border-b-2 border-slate-800 pb-5 mb-5">
           <img src="/eru-logo.png" alt="ERU" className="h-14 sm:h-16 w-auto mx-auto mb-3 object-contain" />
-          <h2 className="text-lg sm:text-xl font-bold text-slate-900 uppercase tracking-wide">Unofficial Academic Transcript</h2>
+          <h2 className="text-lg sm:text-xl font-bold text-slate-900 uppercase tracking-wide">Academic Transcript</h2>
           <h3 className="text-base sm:text-lg font-bold text-slate-900 mt-1">Egyptian Russian University (الجامعة المصرية الروسية)</h3>
           <p className="text-xs sm:text-sm text-slate-700 mt-1">Office of Academic Affairs & Registrar (إدارة شؤون الطلاب والتسجيل)</p>
           <p className="text-xs sm:text-sm text-slate-600">{mockStudent.address}</p>
@@ -126,8 +113,8 @@ export function TranscriptDocument() {
         </div>
 
         <div className="mt-8 text-center text-xs text-slate-600 border-t border-slate-200 pt-4">
-          <p className="font-semibold text-slate-800">This is an unofficial transcript issued for student reference only.</p>
-          <p className="mt-0.5">هذه نسخة غير رسمية من السجل الأكاديمي للاطلاع الداخلي للطالب فقط.</p>
+          <p className="font-semibold text-slate-800">Official Student Academic Transcript — Egyptian Russian University</p>
+          <p className="mt-0.5">سجل الدرجات والبيانات الأكاديمية المعتمدة — الجامعة المصرية الروسية</p>
         </div>
       </div>
     </div>
