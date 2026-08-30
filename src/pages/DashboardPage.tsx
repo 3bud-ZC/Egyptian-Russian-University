@@ -27,19 +27,19 @@ export default function DashboardPage() {
 
           <div className="p-3 sm:p-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-2 gap-x-4 text-xs border-b border-slate-200">
             <div>
-              <span className="text-slate-500 block text-[11px]">Name / الاسم:</span>
+              <span className="text-slate-500 block text-[11px]">Name (الاسم):</span>
               <span className="font-bold text-slate-900 text-sm">{mockStudent.fullName}</span>
             </div>
             <div>
-              <span className="text-slate-500 block text-[11px]">Student ID / الرقم الجامعي:</span>
+              <span className="text-slate-500 block text-[11px]">Student ID (الرقم الجامعي):</span>
               <span className="font-bold text-slate-900 text-sm">{mockStudent.studentId}</span>
             </div>
             <div>
-              <span className="text-slate-500 block text-[11px]">Faculty / الكلية:</span>
+              <span className="text-slate-500 block text-[11px]">Faculty (الكلية):</span>
               <span className="font-semibold text-slate-900">{mockStudent.faculty}</span>
             </div>
             <div>
-              <span className="text-slate-500 block text-[11px]">Program / البرنامج:</span>
+              <span className="text-slate-500 block text-[11px]">Program (البرنامج):</span>
               <span className="font-semibold text-slate-900">{mockStudent.program}</span>
             </div>
           </div>

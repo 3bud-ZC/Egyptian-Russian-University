@@ -51,13 +51,13 @@ export default function GradeReportPage() {
     <AppShell>
       <div className="max-w-6xl mx-auto space-y-4">
         {/* Unofficial Academic Record Notice */}
-        <div className="bg-amber-50 border-l-4 border-amber-500 border border-amber-200 p-2.5 sm:p-3 text-xs text-amber-900 flex items-center justify-between gap-3 shadow-none">
-          <div className="flex items-center gap-2">
-            <AlertCircle className="w-4 h-4 text-amber-700 shrink-0" />
-            <div>
+        <div className="bg-amber-50 border-l-4 border-amber-500 border border-amber-200 p-2.5 sm:p-3 text-xs text-amber-900 flex items-start sm:items-center justify-between gap-3 shadow-none">
+          <div className="flex items-start sm:items-center gap-2">
+            <AlertCircle className="w-4 h-4 text-amber-700 shrink-0 mt-0.5 sm:mt-0" />
+            <div className="leading-relaxed">
               <span className="font-bold">Unofficial Academic Record:</span>{' '}
               <span>This document is for internal student reference only and is not an official university certificate.</span>{' '}
-              <span className="text-amber-800 block sm:inline mt-0.5 sm:mt-0 font-medium">| هذا السجل الأكاديمي للاطلاع الداخلي فقط ولا يعتد به كشهادة رسمية.</span>
+              <span className="text-amber-800 font-medium block sm:inline mt-0.5 sm:mt-0">(هذا السجل الأكاديمي للاطلاع الداخلي فقط ولا يعتد به كشهادة رسمية.)</span>
             </div>
           </div>
           <div className="hidden md:block shrink-0">
@@ -70,11 +70,11 @@ export default function GradeReportPage() {
         {/* Page Title & Controls Strip */}
         <div className="bg-white border border-slate-300 p-3 sm:p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-none">
           <div className="flex items-center gap-2.5">
-            <div className="p-2 bg-[#2d3748] text-white">
+            <div className="p-2 bg-[#2d3748] text-white shrink-0">
               <FileSpreadsheet className="w-5 h-5" />
             </div>
             <div>
-              <h1 className="text-base sm:text-lg font-bold text-slate-900 leading-tight">
+              <h1 className="text-sm sm:text-base md:text-lg font-bold text-slate-900 leading-tight">
                 Academic Results & Grade Report / تقرير نتائج المقررات
               </h1>
               <p className="text-[11px] text-slate-600">
@@ -83,7 +83,7 @@ export default function GradeReportPage() {
             </div>
           </div>
 
-          <div className="flex flex-wrap items-center gap-2.5 text-xs print:hidden">
+          <div className="flex flex-wrap items-center gap-2 text-xs print:hidden">
             <div className="flex items-center gap-1 bg-[#f4f6f8] border border-slate-300 px-2 py-1">
               <span className="text-slate-600 font-medium">Year:</span>
               <select
@@ -123,35 +123,35 @@ export default function GradeReportPage() {
 
           <div className="p-3 sm:p-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-2.5 gap-x-4 text-xs border-b border-slate-200">
             <div>
-              <span className="text-slate-500 block text-[11px]">Student Name / اسم الطالب:</span>
+              <span className="text-slate-500 block text-[11px]">Student Name (اسم الطالب):</span>
               <span className="font-bold text-slate-900 text-[13px]">{mockStudent.fullName}</span>
             </div>
             <div>
-              <span className="text-slate-500 block text-[11px]">Student ID / الرقم الجامعي:</span>
+              <span className="text-slate-500 block text-[11px]">Student ID (الرقم الجامعي):</span>
               <span className="font-bold text-slate-900 text-[13px]">{mockStudent.studentId}</span>
             </div>
             <div>
-              <span className="text-slate-500 block text-[11px]">Faculty / الكلية:</span>
+              <span className="text-slate-500 block text-[11px]">Faculty (الكلية):</span>
               <span className="font-semibold text-slate-900">{mockStudent.faculty}</span>
             </div>
             <div>
-              <span className="text-slate-500 block text-[11px]">Program / البرنامج:</span>
+              <span className="text-slate-500 block text-[11px]">Program (البرنامج):</span>
               <span className="font-semibold text-slate-900">{mockStudent.program}</span>
             </div>
             <div>
-              <span className="text-slate-500 block text-[11px]">Level / المستوى:</span>
+              <span className="text-slate-500 block text-[11px]">Level (المستوى):</span>
               <span className="font-semibold text-slate-900">{mockStudent.year} ({mockStudent.yearAr})</span>
             </div>
             <div>
-              <span className="text-slate-500 block text-[11px]">Degree / الدرجة العلمية:</span>
+              <span className="text-slate-500 block text-[11px]">Degree (الدرجة العلمية):</span>
               <span className="font-semibold text-slate-900">{mockStudent.degree}</span>
             </div>
             <div>
-              <span className="text-slate-500 block text-[11px]">Academic Advisor / المرشد الأكاديمي:</span>
+              <span className="text-slate-500 block text-[11px]">Academic Advisor (المرشد الأكاديمي):</span>
               <span className="font-semibold text-slate-900">{mockStudent.advisor}</span>
             </div>
             <div>
-              <span className="text-slate-500 block text-[11px]">National ID / الرقم القومي:</span>
+              <span className="text-slate-500 block text-[11px]">National ID (الرقم القومي):</span>
               <span className="font-semibold text-slate-900">{mockStudent.nationalId}</span>
             </div>
           </div>
@@ -161,23 +161,23 @@ export default function GradeReportPage() {
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2 text-xs">
           <div className="bg-white border border-slate-300 p-2.5 text-center shadow-none">
             <div className="text-[11px] text-slate-600 font-medium leading-tight">Term GPA<br />المعدل الفصلي</div>
-            <div className="text-lg sm:text-xl font-extrabold text-[#1b7e42] mt-1">{totals.gpa.toFixed(2)}</div>
+            <div className="text-base sm:text-lg lg:text-xl font-extrabold text-[#1b7e42] mt-1">{totals.gpa.toFixed(2)}</div>
           </div>
           <div className="bg-white border border-slate-300 p-2.5 text-center shadow-none">
             <div className="text-[11px] text-slate-600 font-medium leading-tight">CGPA<br />المعدل التراكمي</div>
-            <div className="text-lg sm:text-xl font-extrabold text-[#1b7e42] mt-1">{totals.gpa.toFixed(2)}</div>
+            <div className="text-base sm:text-lg lg:text-xl font-extrabold text-[#1b7e42] mt-1">{totals.gpa.toFixed(2)}</div>
           </div>
           <div className="bg-white border border-slate-300 p-2.5 text-center shadow-none">
             <div className="text-[11px] text-slate-600 font-medium leading-tight">Passed Credits<br />الساعات المكتسبة</div>
-            <div className="text-lg sm:text-xl font-bold text-slate-900 mt-1">{totals.totalPassed.toFixed(2)}</div>
+            <div className="text-base sm:text-lg lg:text-xl font-bold text-slate-900 mt-1">{totals.totalPassed.toFixed(2)}</div>
           </div>
           <div className="bg-white border border-slate-300 p-2.5 text-center shadow-none">
             <div className="text-[11px] text-slate-600 font-medium leading-tight">Attempted Credits<br />الساعات المسجلة</div>
-            <div className="text-lg sm:text-xl font-bold text-slate-900 mt-1">{totals.totalAttempted.toFixed(2)}</div>
+            <div className="text-base sm:text-lg lg:text-xl font-bold text-slate-900 mt-1">{totals.totalAttempted.toFixed(2)}</div>
           </div>
           <div className="bg-white border border-slate-300 p-2.5 text-center shadow-none col-span-2 sm:col-span-1">
             <div className="text-[11px] text-slate-600 font-medium leading-tight">Quality Points<br />نقاط الجودة</div>
-            <div className="text-lg sm:text-xl font-bold text-slate-900 mt-1">{totals.totalQualityPoints.toFixed(2)}</div>
+            <div className="text-base sm:text-lg lg:text-xl font-bold text-slate-900 mt-1">{totals.totalQualityPoints.toFixed(2)}</div>
           </div>
         </div>
 

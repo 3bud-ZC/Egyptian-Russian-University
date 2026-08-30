@@ -17,13 +17,13 @@ export function TranscriptDocument() {
   return (
     <div className="space-y-4 max-w-4xl mx-auto">
       {/* Unofficial Banner */}
-      <div className="bg-amber-50 border-l-4 border-amber-500 border border-amber-200 p-2.5 sm:p-3 text-xs text-amber-900 flex items-center justify-between gap-3 shadow-none print:hidden">
-        <div className="flex items-center gap-2">
-          <AlertCircle className="w-4 h-4 text-amber-700 shrink-0" />
-          <div>
+      <div className="bg-amber-50 border-l-4 border-amber-500 border border-amber-200 p-2.5 sm:p-3 text-xs text-amber-900 flex items-start sm:items-center justify-between gap-3 shadow-none print:hidden">
+        <div className="flex items-start sm:items-center gap-2">
+          <AlertCircle className="w-4 h-4 text-amber-700 shrink-0 mt-0.5 sm:mt-0" />
+          <div className="leading-relaxed">
             <span className="font-bold">Unofficial Academic Transcript:</span>{' '}
             <span>Issued for student reference only. Not an official university certificate.</span>{' '}
-            <span className="text-amber-800 block sm:inline mt-0.5 sm:mt-0 font-medium">| هذا السجل الأكاديمي للاطلاع فقط ولا يعتد به كشهادة رسمية.</span>
+            <span className="text-amber-800 font-medium block sm:inline mt-0.5 sm:mt-0">(هذا السجل الأكاديمي للاطلاع فقط ولا يعتد به كشهادة رسمية.)</span>
           </div>
         </div>
       </div>
@@ -32,21 +32,21 @@ export function TranscriptDocument() {
         <div className="text-center border-b-2 border-slate-800 pb-5 mb-5">
           <img src="/eru-logo.png" alt="ERU" className="h-14 sm:h-16 w-auto mx-auto mb-3 object-contain" />
           <h2 className="text-lg sm:text-xl font-bold text-slate-900 uppercase tracking-wide">Unofficial Academic Transcript</h2>
-          <h3 className="text-base sm:text-lg font-bold text-slate-900 mt-1">Egyptian Russian University / الجامعة المصرية الروسية</h3>
-          <p className="text-xs sm:text-sm text-slate-700 mt-1">Office of Academic Affairs & Registrar / إدارة شؤون الطلاب والتسجيل</p>
+          <h3 className="text-base sm:text-lg font-bold text-slate-900 mt-1">Egyptian Russian University (الجامعة المصرية الروسية)</h3>
+          <p className="text-xs sm:text-sm text-slate-700 mt-1">Office of Academic Affairs & Registrar (إدارة شؤون الطلاب والتسجيل)</p>
           <p className="text-xs sm:text-sm text-slate-600">{mockStudent.address}</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 text-xs sm:text-sm mb-6 sm:mb-8 text-slate-900 bg-slate-50 p-3 sm:p-4 border border-slate-300">
           <div className="space-y-1.5">
-            <p><span className="font-bold text-slate-700">Student Name / اسم الطالب:</span> <strong className="text-slate-900">{mockStudent.fullName}</strong></p>
-            <p><span className="font-bold text-slate-700">Student ID / الرقم الجامعي:</span> <strong className="text-slate-900">{mockStudent.studentId}</strong></p>
-            <p><span className="font-bold text-slate-700">Program / البرنامج:</span> {mockStudent.program}</p>
+            <p><span className="font-bold text-slate-700">Student Name (اسم الطالب):</span> <strong className="text-slate-900">{mockStudent.fullName}</strong></p>
+            <p><span className="font-bold text-slate-700">Student ID (الرقم الجامعي):</span> <strong className="text-slate-900">{mockStudent.studentId}</strong></p>
+            <p><span className="font-bold text-slate-700">Program (البرنامج):</span> {mockStudent.program}</p>
           </div>
           <div className="space-y-1.5">
-            <p><span className="font-bold text-slate-700">Degree / الدرجة:</span> {mockStudent.degree}</p>
-            <p><span className="font-bold text-slate-700">Faculty / الكلية:</span> {mockStudent.faculty}</p>
-            <p><span className="font-bold text-slate-700">Cumulative GPA / المعدل التراكمي:</span> <strong className="text-[#1b7e42] text-sm sm:text-base font-extrabold">{overallGpa.toFixed(2)}</strong></p>
+            <p><span className="font-bold text-slate-700">Degree (الدرجة العلمية):</span> {mockStudent.degree}</p>
+            <p><span className="font-bold text-slate-700">Faculty (الكلية):</span> {mockStudent.faculty}</p>
+            <p><span className="font-bold text-slate-700">Cumulative GPA (المعدل التراكمي):</span> <strong className="text-[#1b7e42] text-sm sm:text-base font-extrabold">{overallGpa.toFixed(2)}</strong></p>
           </div>
         </div>
 

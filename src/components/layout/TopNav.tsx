@@ -129,15 +129,15 @@ export function TopNav({ variant = 'portal', pageLabel }: TopNavProps) {
               </nav>
 
               {/* Unofficial Record Persistent Indicator Badge */}
-              <div className="flex items-center justify-between w-full lg:w-auto py-1.5 text-[11px]">
-                <div className="flex items-center gap-1.5 text-amber-300 bg-black/30 px-2.5 py-0.5 rounded border border-amber-500/30">
+              <div className="flex items-center justify-between w-full lg:w-auto py-1.5 text-[11px] gap-2 overflow-hidden">
+                <div className="flex items-center gap-1.5 text-amber-300 bg-black/30 px-2 py-0.5 border border-amber-500/30 shrink-0">
                   <ShieldAlert className="w-3.5 h-3.5 text-amber-400 shrink-0" />
-                  <span className="font-semibold tracking-wide">Unofficial Academic Record</span>
-                  <span className="text-[10px] text-amber-200/80 hidden sm:inline">| سجل غير رسمي</span>
+                  <span className="font-semibold tracking-wide text-[10px] sm:text-[11px]">Unofficial Academic Record</span>
+                  <span className="text-[10px] text-amber-200/80 hidden md:inline">| سجل غير رسمي</span>
                 </div>
 
-                <div className="flex items-center gap-2 lg:hidden">
-                  <span className="text-[11px] text-slate-300 font-medium">{mockStudent.name} ({mockStudent.studentId})</span>
+                <div className="hidden sm:flex items-center gap-2 lg:hidden truncate">
+                  <span className="text-[11px] text-slate-300 font-medium truncate">{mockStudent.fullName} ({mockStudent.studentId})</span>
                 </div>
               </div>
             </div>
