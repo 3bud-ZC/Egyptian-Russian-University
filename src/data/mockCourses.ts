@@ -35,7 +35,7 @@ export const mockCourses: Course[] = [
   {
     code: 'PC201',
     title: 'Pharmaceutical Analytical Chemistry II',
-    credits: 1,
+    credits: 3,
     days: ['Monday', 'Wednesday'],
     startTime: '1:00 PM',
     endTime: '2:30 PM',
@@ -46,7 +46,7 @@ export const mockCourses: Course[] = [
   {
     code: 'PT202',
     title: 'Physical Pharmacy',
-    credits: 2,
+    credits: 3,
     days: ['Tuesday', 'Thursday'],
     startTime: '12:00 PM',
     endTime: '1:30 PM',
