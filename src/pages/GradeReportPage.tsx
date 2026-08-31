@@ -26,9 +26,6 @@ function GradeTableRow({ row, index }: { row: GradeRow; index: number }) {
           Active / نشط
         </span>
       </td>
-      <td className="py-2 px-3 text-slate-800 font-semibold text-center border-r border-slate-200 whitespace-nowrap">
-        {row.qualityPoints.toFixed(2)}
-      </td>
       <td className="py-2 px-3 text-center border-r border-slate-200 whitespace-nowrap">
         <span className="inline-block px-2 py-0.5 text-[11px] font-bold text-emerald-800 bg-emerald-50 border border-emerald-300 rounded-none">
           Pass / ناجح
@@ -142,7 +139,7 @@ export default function GradeReportPage() {
         </div>
 
         {/* Compact Horizontal Academic Summary Row */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2 text-xs">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs">
           <div className="bg-white border border-slate-300 p-2.5 text-center shadow-none">
             <div className="text-[11px] text-slate-600 font-medium leading-tight">Term GPA<br />المعدل الفصلي</div>
             <div className="text-base sm:text-lg lg:text-xl font-extrabold text-[#1b7e42] mt-1">{totals.gpa.toFixed(2)}</div>
@@ -158,10 +155,6 @@ export default function GradeReportPage() {
           <div className="bg-white border border-slate-300 p-2.5 text-center shadow-none">
             <div className="text-[11px] text-slate-600 font-medium leading-tight">Attempted Credits<br />الساعات المسجلة</div>
             <div className="text-base sm:text-lg lg:text-xl font-bold text-slate-900 mt-1">{totals.totalAttempted.toFixed(2)}</div>
-          </div>
-          <div className="bg-white border border-slate-300 p-2.5 text-center shadow-none col-span-2 sm:col-span-1">
-            <div className="text-[11px] text-slate-600 font-medium leading-tight">Quality Points<br />نقاط الجودة</div>
-            <div className="text-base sm:text-lg lg:text-xl font-bold text-slate-900 mt-1">{totals.totalQualityPoints.toFixed(2)}</div>
           </div>
         </div>
 
@@ -189,9 +182,6 @@ export default function GradeReportPage() {
                     حالة المقرر<br /><span className="text-[10px] text-slate-600 font-normal normal-case">Status</span>
                   </th>
                   <th className="py-2.5 px-3 border-r border-slate-300 text-center whitespace-nowrap">
-                    النقاط<br /><span className="text-[10px] text-slate-600 font-normal normal-case">Points</span>
-                  </th>
-                  <th className="py-2.5 px-3 border-r border-slate-300 text-center whitespace-nowrap">
                     ناجح/راسب<br /><span className="text-[10px] text-slate-600 font-normal normal-case">Result</span>
                   </th>
                   <th className="py-2.5 px-3 text-center whitespace-nowrap">
@@ -217,9 +207,6 @@ export default function GradeReportPage() {
                   </td>
                   <td className="py-2.5 px-3 text-center border-r border-slate-300 text-slate-600 font-semibold text-xs">
                     All Passed
-                  </td>
-                  <td className="py-2.5 px-3 text-center border-r border-slate-300 font-extrabold text-slate-950">
-                    {totals.totalQualityPoints.toFixed(2)}
                   </td>
                   <td className="py-2.5 px-3 text-center border-r border-slate-300 text-emerald-800 font-bold">
                     Pass

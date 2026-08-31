@@ -51,7 +51,6 @@ export function TranscriptDocument() {
                     <th className="py-2 px-3 font-bold border-r border-slate-300">Course Title<br /><span className="text-[10px] text-slate-600 font-normal">اسم المقرر</span></th>
                     <th className="py-2 px-3 font-bold border-r border-slate-300 text-center">CH<br /><span className="text-[10px] text-slate-600 font-normal">الساعات</span></th>
                     <th className="py-2 px-3 font-bold border-r border-slate-300 text-center">Status<br /><span className="text-[10px] text-slate-600 font-normal">الحالة</span></th>
-                    <th className="py-2 px-3 font-bold border-r border-slate-300 text-center">Points<br /><span className="text-[10px] text-slate-600 font-normal">النقاط</span></th>
                     <th className="py-2 px-3 font-bold text-center">Grade<br /><span className="text-[10px] text-slate-600 font-normal">التقدير</span></th>
                   </tr>
                 </thead>
@@ -65,7 +64,6 @@ export function TranscriptDocument() {
                       </td>
                       <td className="py-2 px-3 border-r border-slate-300 text-center font-semibold">{c.credits.toFixed(2)}</td>
                       <td className="py-2 px-3 border-r border-slate-300 text-center text-xs text-emerald-800 font-medium">{c.status} / نشط</td>
-                      <td className="py-2 px-3 border-r border-slate-300 text-center font-semibold">{c.qualityPoints.toFixed(2)}</td>
                       <td className="py-2 px-3 text-center font-bold text-slate-900">{c.finalGrade}</td>
                     </tr>
                   ))}
@@ -73,7 +71,7 @@ export function TranscriptDocument() {
               </table>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-3 text-xs sm:text-sm">
+            <div className="grid grid-cols-3 gap-2 sm:gap-3 text-xs sm:text-sm">
               <div className="border border-slate-300 bg-slate-50 p-2 sm:p-3 text-center">
                 <div className="text-[10px] sm:text-xs text-slate-600 leading-tight">Term Credits<br />ساعات الفصل</div>
                 <div className="font-bold text-slate-900 mt-0.5">{term.termCredits.toFixed(2)}</div>
@@ -86,24 +84,16 @@ export function TranscriptDocument() {
                 <div className="text-[10px] sm:text-xs text-slate-600 leading-tight">Earned Credits<br />الساعات المكتسبة</div>
                 <div className="font-bold text-slate-900 mt-0.5">{term.termEarned.toFixed(2)}</div>
               </div>
-              <div className="border border-slate-300 bg-slate-50 p-2 sm:p-3 text-center">
-                <div className="text-[10px] sm:text-xs text-slate-600 leading-tight">Quality Points<br />نقاط الجودة</div>
-                <div className="font-bold text-slate-900 mt-0.5">{term.termQualityPoints.toFixed(2)}</div>
-              </div>
             </div>
           </div>
         ))}
 
         <div className="mt-6 sm:mt-8 border-t-2 border-slate-700 pt-4">
           <h4 className="text-sm sm:text-base font-bold text-slate-900 mb-2 sm:mb-3">Overall Academic Summary / المجموع التراكمي العام</h4>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-3 text-xs sm:text-sm">
+          <div className="grid grid-cols-2 gap-2 sm:gap-3 text-xs sm:text-sm">
             <div className="border border-slate-300 bg-slate-50 p-2.5 sm:p-3 text-center">
               <div className="text-[10px] sm:text-xs text-slate-600 leading-tight">Total Attempted Credits<br />إجمالي الساعات المسجلة</div>
               <div className="font-bold text-slate-900 mt-0.5 text-base">{overallCredits.toFixed(2)}</div>
-            </div>
-            <div className="border border-slate-300 bg-slate-50 p-2.5 sm:p-3 text-center">
-              <div className="text-[10px] sm:text-xs text-slate-600 leading-tight">Total Quality Points<br />إجمالي نقاط الجودة</div>
-              <div className="font-bold text-slate-900 mt-0.5 text-base">{overall.qualityPoints.toFixed(2)}</div>
             </div>
             <div className="border border-slate-300 bg-slate-50 p-2.5 sm:p-3 text-center">
               <div className="text-[10px] sm:text-xs text-slate-600 leading-tight">Cumulative GPA<br />المعدل التراكمي العام</div>
