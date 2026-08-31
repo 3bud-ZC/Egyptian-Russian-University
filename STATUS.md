@@ -26,17 +26,21 @@ A responsive web portal for the Egyptian Russian University (ERU) student self-s
 
 The default route (`/`) redirects to `/login`.
 
-## Academic Records & Courses (3 Distinct Courses - 9.00 Credit Hours)
+## Academic Records & Courses (7 Distinct Courses)
 
 All academic metrics (Credits, Quality Points, Term GPA, and CGPA) are dynamically calculated from the single source of truth:
 
-- `PC202` — Pharmaceutical Organic Chemistry II — 3.00 CH — C (Active, Pass)
-- `PC201` — Pharmaceutical Analytical Chemistry II — 3.00 CH — C (Active, Pass)
-- `PT202` — Physical Pharmacy — 3.00 CH — C- (Active, Pass)
+- `MD202` — Anatomy & Histology — 3.00 CH — C (Active, Pass)
+- `PC102` — Pharmaceutical Organic Chemistry I — 3.00 CH — B (Active, Pass)
+- `PT202` — Physical Pharmacy — 2.00 CH — C (Active, Pass)
+- `MD203` — Psychology — 4.00 CH — D (Active, Pass)
+- `PB201` — Cell Biology — 4.00 CH — D+ (Active, Pass)
+- `PC101` — Pharmaceutical Analytical Chemistry I — 1.00 CH — B (Active, Pass)
+- `PG101` — Medicinal Plants — 3.00 CH — C (Active, Pass)
 
 ### Academic Totals:
-- **Total Attempted Credits:** 9.00
-- **Total Passed Credits:** 9.00
+- **Total Attempted Credits:** 20.00
+- **Total Passed Credits:** 20.00
 - **Calculated Term GPA:** 1.90
 - **Calculated CGPA:** 1.90
 
